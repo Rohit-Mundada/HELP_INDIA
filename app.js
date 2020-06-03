@@ -12,6 +12,8 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
+const preObject = document.getElementById("object");
+
 toggleModal = () => {
   let modal = document.getElementById("pre-registration-modal");
 
@@ -35,9 +37,6 @@ toggleModal = () => {
 };
 
 toggleModal();
-const preObject=document.getElementById('object');
-const dbRefObject=firebase.database().ref().child('object');
-dbRefObject.on('value',snap=>console.log(snap.val));
 
 function _sendDetailsToFirebase() {
   var name = document.getElementById("name").value;
@@ -45,15 +44,15 @@ function _sendDetailsToFirebase() {
   var email = document.getElementById("email").value;
 
   var database = firebase.database();
+  var curr_count;
+  console.log("Adding to firebase");
 
-  console.log('Adding to firebase');
-  firebase.database().ref().child('users').push({
+  firebase.database().ref().child("users").push({
     name: name,
     email: email,
   });
-  
+
   console.log("HI");
   console.log(name);
   console.log(email);
 }
-
