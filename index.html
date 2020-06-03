@@ -7,6 +7,7 @@
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
+     
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-storage.js"></script>  
@@ -21,12 +22,14 @@
     <header>
       <nav>
         <div class="nav-header">
-          Help India
+          <a href="index.html" style="text-decoration: none; color: #fff;"
+            >Help India</a
+          >
         </div>
         <div class="nav-body">
           <ul class="nav-links">
             <li class="nav-item">
-              <a href="#">About</a>
+              <a href="about.html">About</a>
             </li>
             <li class="nav-item">
               <a href="#">Contact</a>
@@ -39,22 +42,68 @@
       <section class="page">
         <div class="main-content">
           <div class="main-content-header">
-            <h1>Want To Help The Needy In This Crisis...</h1>
+            <h1>Want To Help INDIA Get Back On Its FEET?</h1>
           </div>
           <div class="main-content-lead">
             <p>
-              We bring you an app that connects the people who need help with
-              the people who can help.
+              We bring you a NON-PROFIT App that lets you help people one to one
+              without any outside intervention
+            </p>
+            <p>
+              <a href="about.html" style="color: #1c077a; font-size: 18px;"
+                ><small>Click to know more</small></a
+              >
             </p>
           </div>
           <div class="details">
             <div class="download">
-              <button>
-                <span><i class="fab fa-google-play"></i> Download</span>
+              <button id="pre-registration-button" onclick="a">
+                <span><i class="fas fa-user"></i> Pre-Register</span>
               </button>
+              <!-- Modal for registration -->
+              <div class="modal" id="pre-registration-modal">
+                <div class="modal-content">
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Pre-Register Form</h2>
+                  </div>
+                  <!-- Modal Body -->
+                  <div class="modal-body">
+                    <pre id="object"></pre>
+                    <form action="#">
+                      <label for="name" class="form-name">Name</label>
+                      <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        placeholder="Enter your Name"
+                        required
+                      />
+
+                      <label for="email" class="form-email" id="ikjot"
+                        >Email Address
+                      </label>
+                      <input
+                        type="text"
+                        name="email"
+                        id="email"
+                        placeholder="Enter your Email"
+                        required
+                      />
+                    </form>
+                  </div>
+                  <!-- Modal Footer -->
+                  <div class="modal-footer">
+                    <button type="submit" onclick="_sendDetailsToFirebase()">
+                      <span><i class="fas fa-user-check"></i> Submit</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="helped-info">
-              <h4>No of People Helped: <strong>69</strong></h4>
+              <h4>No of People Registered: <strong>69</strong></h4>
             </div>
           </div>
         </div>
@@ -63,5 +112,7 @@
         </div>
       </section>
     </main>
+    <script src="./app.js"></script>
+    
   </body>
 </html>
