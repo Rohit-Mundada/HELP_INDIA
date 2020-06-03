@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Comfortaa;
+  src: url("./assets/fonts/Comfortaa-VariableFont_wght.ttf");
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(
+    45deg,
+    rgba(63, 12, 99, 1) 0%,
+    rgba(35, 181, 138, 1) 85%,
+    rgba(15, 245, 22, 1) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Comfortaa;
+  overflow: hidden;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+.nav-header {
+  font-size: 24px;
+  margin: 2rem;
+  font-weight: 900;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 2rem;
+}
+
+.nav-item {
+  padding: 0rem 3rem;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.nav-item a:hover {
+  color: #3432e3;
+}
+
+.page {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  color: #fff;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-content-header {
+  font-size: 48px;
+  margin-right: 1rem;
+}
+
+.main-content-lead {
+  font-size: 24px;
+  margin: 1rem;
+}
+
+.details {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2rem 0rem;
+}
+
+.download button {
+  padding: 1rem 2rem;
+  font-size: 18px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(
+    45deg,
+    rgba(199, 15, 15, 1) 4%,
+    rgba(228, 145, 18, 1) 54%,
+    rgba(228, 245, 15, 1) 100%
+  );
+  flex-wrap: nowrap;
+  margin: 0rem 2rem 0rem 0rem;
+}
+
+.download button:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.helped-info {
+  margin: 1rem 0rem;
+  font-size: 24px;
+}
+
+.main-content-img img {
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+@media (max-width: 950px) {
+  .page {
+    flex-direction: column;
+  }
+  .main-content-img img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 468px) {
+  nav {
+    flex-direction: column;
+  }
+  .page {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  .main-content-header {
+    text-align: center;
+    font-size: 32px;
+  }
+  .main-content-lead {
+    text-align: center;
+    font-size: 20px;
+  }
+  .details {
+    justify-content: center;
+    align-items: center;
+  }
+  .download button {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-right: 2rem;
+    padding: 1rem 3rem;
+    margin-bottom: 2rem;
+  }
+  .helped-info {
+    font-size: 18px;
+    margin-top: -1rem;
+  }
+  .main-content-img img {
+    display: none;
+  }
+}
