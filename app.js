@@ -43,6 +43,8 @@ function _sendDetailsToFirebase() {
 
   var email = document.getElementById("email").value;
 
+  let contact = document.getElementById("contact").value;
+
   var database = firebase.database();
   var curr_count;
   console.log("Adding to firebase");
@@ -50,9 +52,11 @@ function _sendDetailsToFirebase() {
   firebase.database().ref().child("users").push({
     name: name,
     email: email,
+    contact: contact,
   });
 
   console.log("HI");
   console.log(name);
   console.log(email);
+  console.log(contact);
 }
