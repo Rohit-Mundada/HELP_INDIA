@@ -3,6 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+     
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-storage.js"></script>  
     <script
       src="https://kit.fontawesome.com/74c1adc36b.js"
       crossorigin="anonymous"
@@ -35,6 +43,7 @@
         <div class="main-content">
           <div class="main-content-header">
             <h1>Want To Help INDIA Get Back On Its FEET?</h1>
+            <button onclick="_getNumberOfPeopleReg()">BHI</button>
           </div>
           <div class="main-content-lead">
             <p>
@@ -49,7 +58,7 @@
           </div>
           <div class="details">
             <div class="download">
-              <button id="pre-registration-button">
+              <button id="pre-registration-button" onclick="_sendDetailsToFirebase">
                 <span><i class="fas fa-user"></i> Pre-Register</span>
               </button>
               <!-- Modal for registration -->
@@ -62,6 +71,7 @@
                   </div>
                   <!-- Modal Body -->
                   <div class="modal-body">
+                    <pre id="object"></pre>
                     <form action="#">
                       <label for="name" class="form-name">Name</label>
                       <input
@@ -72,7 +82,7 @@
                         required
                       />
 
-                      <label for="email" class="form-email"
+                      <label for="email" class="form-email" id="ikjot"
                         >Email Address
                       </label>
                       <input
@@ -86,7 +96,7 @@
                   </div>
                   <!-- Modal Footer -->
                   <div class="modal-footer">
-                    <button type="submit">
+                    <button type="submit" onclick="_sendDetailsToFirebase()">
                       <span><i class="fas fa-user-check"></i> Submit</span>
                     </button>
                   </div>
@@ -104,5 +114,6 @@
       </section>
     </main>
     <script src="./app.js"></script>
+    
   </body>
 </html>
