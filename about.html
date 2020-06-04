@@ -3,6 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-storage.js"></script>
     <script
       src="https://kit.fontawesome.com/74c1adc36b.js"
       crossorigin="anonymous"
@@ -22,9 +30,7 @@
         <div class="nav-body">
           <ul class="nav-links">
             <li class="nav-item">
-              <a href="index.html"
-                ><i class="fas fa-cheveron-circle-left"></i> Back to Home</a
-              >
+              <a href="index.html"> Home</a>
             </li>
             <li class="nav-item">
               <a href="about.html">About</a>
@@ -99,7 +105,10 @@
         </div>
         <div class="details">
           <div class="download">
-            <button id="pre-registration-button">
+            <button
+              id="pre-registration-button"
+              onclick="_sendDetailsToFirebase()"
+            >
               <span><i class="fas fa-user"></i> Pre-Register</span>
             </button>
             <!-- Modal for registration -->
@@ -109,11 +118,20 @@
                 <div class="modal-header">
                   <span class="close">&times;</span>
                   <h2>Pre-Register Form</h2>
+                  <p style="margin-top: 1rem; color: red;">
+                    <small><strong>* Required</strong></small>
+                  </p>
                 </div>
                 <!-- Modal Body -->
                 <div class="modal-body">
+                  <pre id="object"></pre>
                   <form action="#">
-                    <label for="name" class="form-name">Name</label>
+                    <label for="name" class="form-name"
+                      >Name:
+                      <small style="color: red;"
+                        ><strong>*</strong></small
+                      ></label
+                    >
                     <input
                       type="text"
                       name="name"
@@ -122,7 +140,9 @@
                       required
                     />
 
-                    <label for="email" class="form-email">Email Address </label>
+                    <label for="email" class="form-email" id="ikjot"
+                      >Email Address: <small style="color: red;"><strong>*</strong></small>
+                    </label>
                     <input
                       type="text"
                       name="email"
@@ -130,11 +150,21 @@
                       placeholder="Enter your Email"
                       required
                     />
+                    <label for="contact" class="form-contact"
+                      >Contact Number:
+                      <small style="font-size: 14px;">(Optional)</small></label
+                    >
+                    <input
+                      type="text"
+                      name="contact"
+                      id="contact"
+                      placeholder="Enter you Phone Number"
+                    />
                   </form>
                 </div>
                 <!-- Modal Footer -->
                 <div class="modal-footer">
-                  <button type="submit">
+                  <button type="submit" onclick="_sendDetailsToFirebase()">
                     <span><i class="fas fa-user-check"></i> Submit</span>
                   </button>
                 </div>
