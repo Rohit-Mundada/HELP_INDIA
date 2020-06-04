@@ -68,6 +68,7 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 4rem;
 }
 
 .main-content-header {
@@ -108,6 +109,10 @@ nav {
 .helped-info {
   margin: 1rem 0rem;
   font-size: 24px;
+}
+
+.main-content-img {
+  margin-top: 4rem;
 }
 
 .main-content-img img {

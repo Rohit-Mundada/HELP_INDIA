@@ -45,18 +45,52 @@ function _sendDetailsToFirebase() {
 
   let contact = document.getElementById("contact").value;
 
+  let mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+  let contactFormat = /^\d{10}$/;
+
+  let errorEmail, errorName, errorContact;
+
+  console.log(typeof email.match(mailFormat));
+
+  if (
+    (email.match(mailFormat) !== null && name !== "") ||
+    contact.match(contactFormat) !== null
+  ) {
+    firebase.database().ref().child("users").push({
+      email: email,
+      name: name,
+      contact: contact,
+    });
+    console.log(email);
+    console.log(name);
+    console.log(contact);
+  } else {
+    if (name === "") {
+      errorName = "This is a required field";
+      document.getElementById("error-name-text").innerHTML = errorName;
+    }
+    if (email.match(mailFormat) === null) {
+      errorEmail = "Not a valid Email Address";
+      document.getElementById("error-email-text").innerHTML = errorEmail;
+    } else {
+      errorEmail = "";
+      document.getElementById("error-email-text").innerHTML = errorEmail;
+    }
+    if (contact === "") {
+      errorContact = "";
+      document.getElementById("error-contact-text").innerHTML = errorContact;
+    } else if (contact.match(contactFormat) === null) {
+      errorContact = "Must be a 10 digit phone number";
+      document.getElementById("error-contact-text").innerHTML = errorContact;
+    } else {
+      errorContact = "";
+      document.getElementById("error-contact-text").innerHTML = errorContact;
+    }
+  }
+
   var database = firebase.database();
   var curr_count;
   console.log("Adding to firebase");
-
-  firebase.database().ref().child("users").push({
-    name: name,
-    email: email,
-    contact: contact,
-  });
-
   console.log("HI");
-  console.log(name);
-  console.log(email);
-  console.log(contact);
 }
