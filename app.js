@@ -1,5 +1,5 @@
 // Your web app's Firebase configuration
-var firebaseConfig = {
+let firebaseConfig = {
   apiKey: "AIzaSyD-v_aiEkCcVzHAJbx0EPRRWDNchzObNZo",
   authDomain: "help-india-june-2020.firebaseapp.com",
   databaseURL: "https://help-india-june-2020.firebaseio.com",
@@ -12,14 +12,14 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
-const preObject = document.getElementById("object");
+const preObject = document.querySelector(".object");
 
-toggleModal = () => {
-  let modal = document.getElementById("pre-registration-modal");
+toggleHelperModal = () => {
+  let modal = document.querySelector(".pre-helper-registration-modal");
 
-  let button = document.getElementById("pre-registration-button");
+  let button = document.querySelector(".pre-helper-registration-button");
 
-  let close = document.getElementsByClassName("close")[0];
+  let close = document.getElementsByClassName("close-helper-modal")[0];
 
   button.onclick = () => {
     modal.style.display = "block";
@@ -36,22 +36,18 @@ toggleModal = () => {
   };
 };
 
-toggleModal();
+function _sendHelperDetailsToFirebase() {
+  let name = document.querySelector("#helper-name").value;
 
-function _sendDetailsToFirebase() {
-  var name = document.getElementById("name").value;
+  let email = document.querySelector("#helper-email").value;
 
-  var email = document.getElementById("email").value;
-
-  let contact = document.getElementById("contact").value;
+  let contact = document.querySelector("#helper-contact").value;
 
   let mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
   let contactFormat = /^\d{10}$/;
 
   let errorEmail, errorName, errorContact;
-
-  console.log(typeof email.match(mailFormat));
 
   if (
     (email.match(mailFormat) !== null && name !== "") ||
@@ -62,35 +58,180 @@ function _sendDetailsToFirebase() {
       name: name,
       contact: contact,
     });
+    console.log("Adding to firebase");
+    console.log("HI");
     console.log(email);
     console.log(name);
     console.log(contact);
+    alert("All data was successfully registered!");
   } else {
     if (name === "") {
       errorName = "This is a required field";
-      document.getElementById("error-name-text").innerHTML = errorName;
+      document.querySelector(".error-name-text").innerHTML = errorName;
     }
     if (email.match(mailFormat) === null) {
       errorEmail = "Not a valid Email Address";
-      document.getElementById("error-email-text").innerHTML = errorEmail;
+      document.querySelector(".error-email-text").innerHTML = errorEmail;
     } else {
       errorEmail = "";
-      document.getElementById("error-email-text").innerHTML = errorEmail;
+      document.querySelector(".error-email-text").innerHTML = errorEmail;
     }
     if (contact === "") {
       errorContact = "";
-      document.getElementById("error-contact-text").innerHTML = errorContact;
+      document.querySelector(".error-contact-text").innerHTML = errorContact;
     } else if (contact.match(contactFormat) === null) {
       errorContact = "Must be a 10 digit phone number";
-      document.getElementById("error-contact-text").innerHTML = errorContact;
+      document.querySelector(".error-contact-text").innerHTML = errorContact;
     } else {
       errorContact = "";
-      document.getElementById("error-contact-text").innerHTML = errorContact;
+      document.querySelector(".error-contact-text").innerHTML = errorContact;
     }
   }
 
-  var database = firebase.database();
-  var curr_count;
-  console.log("Adding to firebase");
-  console.log("HI");
+  document.getElementById("helper-form").reset();
+
+  let database = firebase.database();
+  let curr_count;
+}
+
+toggleWorkerModal = () => {
+  let modal = document.querySelector(".pre-worker-registration-modal");
+
+  let button = document.querySelector(".pre-worker-registration-button");
+
+  let close = document.getElementsByClassName("close-worker-modal")[0];
+
+  button.onclick = () => {
+    modal.style.display = "block";
+  };
+
+  close.onclick = () => {
+    modal.style.display = "none";
+  };
+
+  window.onclick = (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+};
+
+function _sendWorkerDetailsToFirebase() {
+  let name = document.querySelector("#worker-name").value;
+
+  let email = document.querySelector("#worker-email").value;
+
+  let contact = document.querySelector("#worker-contact").value;
+
+  let origin = document.querySelector("#worker-origin").value;
+
+  let destination = document.querySelector("#worker-destination").value;
+
+  let workerFamilyMembers = document.querySelector("#worker-family").value;
+
+  let mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+  let contactFormat = /^\d{10}$/;
+
+  let errorName,
+    errorEmail,
+    errorContact,
+    errorOrigin,
+    errorDestination,
+    errorWorkerFamilyMembers;
+
+  if (
+    (name !== "" &&
+      contact.match(contactFormat) !== null &&
+      origin !== "" &&
+      destination !== "" &&
+      workerFamilyMembers !== "") ||
+    email.match(mailFormat) !== null
+  ) {
+    firebase.database().ref().child("users").push({
+      name: name,
+      email: email,
+      contact: contact,
+      origin: origin,
+      destination: destination,
+      workerFamilyMembers: workerFamilyMembers,
+    });
+    console.log(name);
+    console.log(email);
+    console.log(contact);
+    console.log(origin);
+    console.log(destination);
+    console.log(workerFamilyMembers);
+
+    alert("All data was successfully registered!");
+  } else {
+    if (name === "") {
+      errorName = "This is a required field";
+      document.querySelector(".error-worker-name-text").innerHTML = errorName;
+    } else {
+      errorName = "";
+      document.querySelector(".error-worker-name-text").innerHTML = errorName;
+    }
+    if (email.match(mailFormat) === null) {
+      errorEmail = "Not a valid Email Address";
+      document.querySelector(".error-worker-email-text").innerHTML = errorEmail;
+    } else {
+      errorEmail = "";
+      document.querySelector(".error-worker-email-text").innerHTML = errorEmail;
+    }
+    if (contact === "") {
+      errorContact = "This is a required field";
+      document.querySelector(
+        ".error-worker-contact-text"
+      ).innerHTML = errorContact;
+    } else if (contact.match(contactFormat) === null) {
+      errorContact = "Must be a 10 digit phone number";
+      document.querySelector(
+        ".error-worker-contact-text"
+      ).innerHTML = errorContact;
+    } else {
+      errorContact = "";
+      document.querySelector(
+        ".error-worker-contact-text"
+      ).innerHTML = errorContact;
+    }
+    if (origin === "") {
+      errorOrigin = "This is a required field";
+      document.querySelector(
+        ".error-worker-origin-text"
+      ).innerHTML = errorOrigin;
+    } else {
+      errorOrigin = "";
+      document.querySelector(
+        ".error-worker-origin-text"
+      ).innerHTML = errorOrigin;
+    }
+    if (destination === "") {
+      errorDestination = "This is a required field";
+      document.querySelector(
+        ".error-worker-destination-text"
+      ).innerHTML = errorDestination;
+    } else {
+      errorDestination = "";
+      document.querySelector(
+        ".error-worker-destination-text"
+      ).innerHTML = errorOrigin;
+    }
+    if (workerFamilyMembers === "") {
+      errorWorkerFamilyMembers = "This is a required field";
+      document.querySelector(
+        ".error-worker-family-text"
+      ).innerHTML = errorDestination;
+    } else {
+      errorWorkerFamilyMembers = "";
+      document.querySelector(
+        ".error-worker-family-text"
+      ).innerHTML = errorOrigin;
+    }
+  }
+
+  document.getElementById("worker-form").reset();
+
+  let database = firebase.database();
+  let curr_count;
 }

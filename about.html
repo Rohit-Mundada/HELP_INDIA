@@ -16,7 +16,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="./style.css" />
-    <title>Help India</title>
+    <title>Help India - About</title>
   </head>
 
   <body>
@@ -113,17 +113,17 @@
         <div class="details">
           <div class="download">
             <button
-              id="pre-registration-button"
-              onclick="_sendDetailsToFirebase()"
+              class="pre-helper-registration-button"
+              onclick="toggleHelperModal()"
             >
-              <span><i class="fas fa-user"></i> Pre-Register</span>
+              <span><i class="fas fa-user"></i> Pre-Register For Helper</span>
             </button>
             <!-- Modal for registration -->
-            <div class="modal" id="pre-registration-modal">
+            <div class="modal pre-helper-registration-modal">
               <div class="modal-content">
                 <!-- Modal Header -->
                 <div class="modal-header">
-                  <span class="close">&times;</span>
+                  <span class="close-helper-modal">&times;</span>
                   <h2>Pre-Register Form</h2>
                   <p style="margin-top: 1rem; color: red;">
                     <small><strong>* Required</strong></small>
@@ -131,9 +131,9 @@
                 </div>
                 <!-- Modal Body -->
                 <div class="modal-body">
-                  <pre id="object"></pre>
-                  <form action="#">
-                    <label for="name" class="form-name"
+                  <pre class="object"></pre>
+                  <form action="#" id="helper-form">
+                    <label for="helper-name" class="form-name"
                       >Name:
                       <small style="color: red;"
                         ><strong>*</strong></small
@@ -141,49 +141,180 @@
                     >
                     <input
                       type="text"
-                      name="name"
-                      id="name"
+                      name="helper-name"
+                      id="helper-name"
                       placeholder="Enter your Name"
                       required
                     />
                     <small
-                      id="error-name-text"
+                      class="error-name-text"
                       style="color: red; margin-left: 1rem; margin-top: 0.3rem;"
                     ></small>
-                    <label for="email" class="form-email" id="ikjot"
+                    <label for="helper-email" class="form-email"
                       >Email Address:
                       <small style="color: red;"><strong>*</strong></small>
                     </label>
                     <input
                       type="email"
-                      name="email"
-                      id="email"
+                      name="helper-email"
+                      id="helper-email"
                       placeholder="Enter your Email"
                       required
                     />
                     <small
-                      id="error-email-text"
+                      class="error-email-text"
                       style="color: red; margin-left: 1rem; margin-top: 0.3rem;"
                     ></small>
-                    <label for="contact" class="form-contact"
+                    <label for="helper-contact" class="form-contact"
                       >Contact Number:
                       <small style="font-size: 14px;">(Optional)</small></label
                     >
                     <input
                       type="text"
-                      name="contact"
-                      id="contact"
+                      name="helper-contact"
+                      id="helper-contact"
                       placeholder="Enter you Phone Number"
                     />
                     <small
-                      id="error-contact-text"
+                      class="error-contact-text"
                       style="color: red; margin-left: 1rem; margin-top: 0.3rem;"
                     ></small>
                   </form>
                 </div>
                 <!-- Modal Footer -->
                 <div class="modal-footer">
-                  <button type="submit" onclick="_sendDetailsToFirebase()">
+                  <button
+                    type="submit"
+                    onclick="_sendHelperDetailsToFirebase()"
+                  >
+                    <span><i class="fas fa-user-check"></i> Submit</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="download">
+            <button
+              class="pre-worker-registration-button"
+              onclick="toggleWorkerModal()"
+            >
+              <span><i class="fas fa-user"></i> Pre-Register For Shramik</span>
+            </button>
+            <!-- Modal for registration -->
+            <div class="modal pre-worker-registration-modal">
+              <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <span class="close-worker-modal">&times;</span>
+                  <h2>Pre-Register Form</h2>
+                  <p style="margin-top: 1rem; color: red;">
+                    <small><strong>* Required</strong></small>
+                  </p>
+                </div>
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <pre class="object"></pre>
+                  <form action="#" id="worker-form">
+                    <label for="worker-name" class="form-name"
+                      >Name:
+                      <small style="color: red;"
+                        ><strong>*</strong></small
+                      ></label
+                    >
+                    <input
+                      type="text"
+                      name="worker-name"
+                      id="worker-name"
+                      placeholder="Enter your Name"
+                      required
+                    />
+                    <small
+                      class="error-worker-name-text"
+                      style="color: red; margin-left: 1rem; margin-top: 0.3rem;"
+                    ></small>
+                    <label for="worker-email" class="form-email" class="ikjot"
+                      >Email Address:
+                      <small style="font-size: 14px;">(Optional)</small>
+                    </label>
+                    <input
+                      type="email"
+                      name="worker-email"
+                      id="worker-email"
+                      placeholder="Enter your Email"
+                    />
+                    <small
+                      class="error-worker-email-text"
+                      style="color: red; margin-left: 1rem; margin-top: 0.3rem;"
+                    ></small>
+                    <label for="worker-contact" class="form-contact"
+                      >Contact Number:
+                      <small style="color: red;"><strong>*</strong></small>
+                    </label>
+                    <input
+                      type="text"
+                      name="worker-contact"
+                      id="worker-contact"
+                      placeholder="Enter you Phone Number"
+                    />
+                    <small
+                      class="error-worker-contact-text"
+                      style="color: red; margin-left: 1rem; margin-top: 0.3rem;"
+                    ></small>
+                    <label for="worker-origin" class="form-origin">
+                      Origin:
+                      <small style="color: red;"><strong>*</strong></small>
+                    </label>
+                    <input
+                      type="text"
+                      name="worker-origin"
+                      id="worker-origin"
+                      placeholder="Enter the location where you live"
+                      required
+                    />
+                    <small
+                      class="error-worker-origin-text"
+                      style="color: red; margin-left: 1rem; margin-top: 0.3rem;"
+                    ></small>
+                    <label for="worker-destination" class="form-destination"
+                      >Destination:
+                      <small style="color: red;"
+                        ><strong>*</strong></small
+                      ></label
+                    >
+                    <input
+                      type="text"
+                      name="worker-destination"
+                      id="worker-destination"
+                      placeholder="Where do you want to go?"
+                      required
+                    />
+                    <small
+                      class="error-worker-destination-text"
+                      style="color: red; margin-left: 1rem; margin-top: 0.3rem;"
+                    ></small>
+                    <label for="worker-family">
+                      Number of Family Members:
+                      <small style="color: red;"><strong>*</strong></small>
+                    </label>
+                    <input
+                      type="text"
+                      name="worker-family"
+                      id="worker-family"
+                      placeholder="Enter the no. of family members"
+                      reduired
+                    />
+                    <small
+                      class="error-worker-family-text"
+                      style="color: red; margin-left: 1rem; margin-top: 0.3rem;"
+                    ></small>
+                  </form>
+                </div>
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                  <button
+                    type="submit"
+                    onclick="_sendWorkerDetailsToFirebase()"
+                  >
                     <span><i class="fas fa-user-check"></i> Submit</span>
                   </button>
                 </div>
