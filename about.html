@@ -49,274 +49,329 @@
         </div>
       </nav>
     </header>
-    <main class="about-help-india">
-      <section class="section-1">
-        <div class="about-content-lead">
-          <p>
-            Ever saw a headline and sympathised with the problems of the
-            migrants?
-          </p>
-          <p>
-            Ever saw a post and wondered what the satisfaction of helping the
-            people reach their home would be like?
-          </p>
-          <p>
-            Ever wanted to help those stranded workers but couldn’t find and
-            trust a way for it to happen? We bring you an app which connects you
-            to the people in need and lets you help them without anyone’s
-            intervention.
-          </p>
-        </div>
-      </section>
-      <section class="section-2">
-        <div class="about-content-lead">
-          <p>
-            Our App HELP INDIA is a step towards helping those who need it, is a
-            step towards helping India get back on its feet, is a step to serve
-            our nation when it needs it the most. Using our application you will
-            dive into the lives of the stranded migrant workers who are trying
-            their best to reach their home, who don’t have the luxury to
-            complain about the lockdown being ‘boring’.
-          </p>
-        </div>
-      </section>
-      <section class="section-3">
-        <div class="about-content-lead">
-          <p>
-            HELP INDIA is an app for every able Indian to help the people who
-            strive every minute to make it alive through this global pandemic to
-            their home. It is an application for every influencer like Sonu Sood
-            to make a change personally and have something to cherish for their
-            entire lifetime
-          </p>
-        </div>
-      </section>
-      <section class="section-4">
-        <div class="about-content-lead">
-          <p>
-            The HELP INDIA app helps you :
-          </p>
-          <ul>
-            <li>
-              Browse through the people in need and select the one according to
-              your capability to help.
-            </li>
-            <li>
-              Connect and help the one in need personally without any outside
-              intervention.
-            </li>
-            <li>
-              Pay 0.0001% back to what the nation has given you.
-            </li>
-          </ul>
-        </div>
-        <div class="details">
-          <div class="download">
-            <button
-              class="pre-helper-registration-button"
-              onclick="toggleHelperModal()"
-            >
-              <span><i class="fas fa-user"></i> Pre-Register For Helper</span>
-            </button>
-            <!-- Modal for registration -->
-            <div class="modal pre-helper-registration-modal">
-              <div class="modal-content">
-                <!-- Modal Header -->
-                <div class="modal-header">
-                  <span class="close-helper-modal">&times;</span>
-                  <h2>Pre-Register Form</h2>
-                  <p style="margin-top: 1rem; color: red;">
-                    <small><strong>* Required</strong></small>
-                  </p>
+    <main>
+      <section class="page">
+        <div class="about-content">
+          <div class="about-content-header">
+            <h1>About Us</h1>
+          </div>
+          <div class="about-flip-box">
+            <div class="flip-box">
+              <div class="flip-box-inner">
+                <div class="flip-box-front">
+                  <div class="about-content-lead">
+                    <p>
+                      Ever saw a headline and sympathised with the problems of
+                      the migrants?
+                    </p>
+                    <p>
+                      Ever saw a post and wondered what the satisfaction of
+                      helping the people reach their home would be like?
+                    </p>
+                    <p>
+                      Ever wanted to help those stranded workers but couldn’t
+                      find and trust a way for it to happen? We bring you an app
+                      which connects you to the people in need and lets you help
+                      them without anyone’s intervention.
+                    </p>
+                    <p>
+                      <small>(Tap for more info)</small>
+                    </p>
+                  </div>
                 </div>
-                <!-- Modal Body -->
-                <div class="modal-body">
-                  <pre class="object"></pre>
-                  <form action="#" id="helper-form">
-                    <label for="helper-name" class="form-name"
-                      >Name:
-                      <small style="color: red;"
-                        ><strong>*</strong></small
-                      ></label
-                    >
-                    <input
-                      type="text"
-                      name="helper-name"
-                      id="helper-name"
-                      placeholder="Enter your Name"
-                      required
-                    />
-                    <small
-                      class="error-name-text"
-                      style="color: red; margin-left: 1rem; margin-top: 0.3rem;"
-                    ></small>
-                    <label for="helper-email" class="form-email"
-                      >Email Address:
-                      <small style="color: red;"><strong>*</strong></small>
-                    </label>
-                    <input
-                      type="email"
-                      name="helper-email"
-                      id="helper-email"
-                      placeholder="Enter your Email"
-                      required
-                    />
-                    <small
-                      class="error-email-text"
-                      style="color: red; margin-left: 1rem; margin-top: 0.3rem;"
-                    ></small>
-                    <label for="helper-contact" class="form-contact"
-                      >Contact Number:
-                      <small style="font-size: 14px;">(Optional)</small></label
-                    >
-                    <input
-                      type="text"
-                      name="helper-contact"
-                      id="helper-contact"
-                      placeholder="Enter you Phone Number"
-                    />
-                    <small
-                      class="error-contact-text"
-                      style="color: red; margin-left: 1rem; margin-top: 0.3rem;"
-                    ></small>
-                  </form>
+                <div class="flip-box-back">
+                  <div class="about-content-lead">
+                    <p>
+                      Our App HELP INDIA is a step towards helping those who
+                      need it, is a step towards helping India get back on its
+                      feet, is a step to serve our nation when it needs it the
+                      most. Using our application you will dive into the lives
+                      of the stranded migrant workers who are trying their best
+                      to reach their home, who don’t have the luxury to complain
+                      about the lockdown being ‘boring’.
+                    </p>
+                    <p>
+                      <small>(Tap anywhere on an empty space to go back)</small>
+                    </p>
+                  </div>
                 </div>
-                <!-- Modal Footer -->
-                <div class="modal-footer">
-                  <button
-                    type="submit"
-                    onclick="_sendHelperDetailsToFirebase()"
-                  >
-                    <span><i class="fas fa-user-check"></i> Submit</span>
-                  </button>
+              </div>
+            </div>
+            <div class="flip-box-top">
+              <div class="flip-box-top-inner">
+                <div class="flip-box-top-front">
+                  <div class="about-content-lead">
+                    <p>
+                      The HELP INDIA app helps you :
+                    </p>
+                    <ul>
+                      <li>
+                        Browse through the people in need and select the one
+                        according to your capability to help.
+                      </li>
+                      <li>
+                        Connect and help the one in need personally without any
+                        outside intervention.
+                      </li>
+                      <li>
+                        Pay 0.0001% back to what the nation has given you.
+                      </li>
+                    </ul>
+                    <p></p>
+                    <p>
+                      <small>(Tap for more info)</small>
+                    </p>
+                  </div>
+                </div>
+                <div class="flip-box-top-back">
+                  <div class="about-content-lead">
+                    <p>
+                      HELP INDIA is an app for every able Indian to help the
+                      people who strive every minute to make it alive through
+                      this global pandemic to their home. It is an application
+                      for every influencer like Sonu Sood to make a change
+                      personally and have something to cherish for their entire
+                      lifetime.
+                    </p>
+                    <p>
+                      <small>(Tap anywhere on an empty space to go back)</small>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="download">
-            <button
-              class="pre-worker-registration-button"
-              onclick="toggleWorkerModal()"
-            >
-              <span><i class="fas fa-user"></i> Pre-Register For Shramik</span>
-            </button>
-            <!-- Modal for registration -->
-            <div class="modal pre-worker-registration-modal">
-              <div class="modal-content">
-                <!-- Modal Header -->
-                <div class="modal-header">
-                  <span class="close-worker-modal">&times;</span>
-                  <h2>Pre-Register Form</h2>
-                  <p style="margin-top: 1rem; color: red;">
-                    <small><strong>* Required</strong></small>
-                  </p>
-                </div>
-                <!-- Modal Body -->
-                <div class="modal-body">
-                  <pre class="object"></pre>
-                  <form action="#" id="worker-form">
-                    <label for="worker-name" class="form-name"
-                      >Name:
-                      <small style="color: red;"
-                        ><strong>*</strong></small
-                      ></label
+
+          <div class="details">
+            <div class="download">
+              <button
+                class="pre-helper-registration-button"
+                onclick="toggleHelperModal()"
+              >
+                <span><i class="fas fa-user"></i> Pre-Register For Helper</span>
+              </button>
+              <!-- Modal for registration -->
+              <div class="modal pre-helper-registration-modal">
+                <div class="modal-content">
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <span class="close-helper-modal">&times;</span>
+                    <h2>Pre-Register Form</h2>
+                    <p style="margin-top: 1rem; color: red;">
+                      <small><strong>* Required</strong></small>
+                    </p>
+                  </div>
+                  <!-- Modal Body -->
+                  <div class="modal-body">
+                    <pre class="object"></pre>
+                    <form action="#" id="helper-form">
+                      <label for="helper-name" class="form-name"
+                        >Name:
+                        <small style="color: red;"
+                          ><strong>*</strong></small
+                        ></label
+                      >
+                      <input
+                        type="text"
+                        name="helper-name"
+                        id="helper-name"
+                        placeholder="Enter your Name"
+                        required
+                      />
+                      <small
+                        class="error-name-text"
+                        style="
+                          color: red;
+                          margin-left: 1rem;
+                          margin-top: 0.3rem;
+                        "
+                      ></small>
+                      <label for="helper-email" class="form-email"
+                        >Email Address:
+                        <small style="color: red;"><strong>*</strong></small>
+                      </label>
+                      <input
+                        type="email"
+                        name="helper-email"
+                        id="helper-email"
+                        placeholder="Enter your Email"
+                        required
+                      />
+                      <small
+                        class="error-email-text"
+                        style="
+                          color: red;
+                          margin-left: 1rem;
+                          margin-top: 0.3rem;
+                        "
+                      ></small>
+                      <label for="helper-contact" class="form-contact"
+                        >Contact Number:
+                        <small style="font-size: 14px;"
+                          >(Optional)</small
+                        ></label
+                      >
+                      <input
+                        type="text"
+                        name="helper-contact"
+                        id="helper-contact"
+                        placeholder="Enter you Phone Number"
+                      />
+                      <small
+                        class="error-contact-text"
+                        style="
+                          color: red;
+                          margin-left: 1rem;
+                          margin-top: 0.3rem;
+                        "
+                      ></small>
+                    </form>
+                  </div>
+                  <!-- Modal Footer -->
+                  <div class="modal-footer">
+                    <button
+                      type="submit"
+                      onclick="_sendHelperDetailsToFirebase()"
+                      class="close-helper-modal-onsubmit"
                     >
-                    <input
-                      type="text"
-                      name="worker-name"
-                      id="worker-name"
-                      placeholder="Enter your Name"
-                      required
-                    />
-                    <small
-                      class="error-worker-name-text"
-                      style="color: red; margin-left: 1rem; margin-top: 0.3rem;"
-                    ></small>
-                    <label for="worker-email" class="form-email" class="ikjot"
-                      >Email Address:
-                      <small style="font-size: 14px;">(Optional)</small>
-                    </label>
-                    <input
-                      type="email"
-                      name="worker-email"
-                      id="worker-email"
-                      placeholder="Enter your Email"
-                    />
-                    <small
-                      class="error-worker-email-text"
-                      style="color: red; margin-left: 1rem; margin-top: 0.3rem;"
-                    ></small>
-                    <label for="worker-contact" class="form-contact"
-                      >Contact Number:
-                      <small style="color: red;"><strong>*</strong></small>
-                    </label>
-                    <input
-                      type="text"
-                      name="worker-contact"
-                      id="worker-contact"
-                      placeholder="Enter you Phone Number"
-                    />
-                    <small
-                      class="error-worker-contact-text"
-                      style="color: red; margin-left: 1rem; margin-top: 0.3rem;"
-                    ></small>
-                    <label for="worker-origin" class="form-origin">
-                      Origin:
-                      <small style="color: red;"><strong>*</strong></small>
-                    </label>
-                    <input
-                      type="text"
-                      name="worker-origin"
-                      id="worker-origin"
-                      placeholder="Enter the location where you live"
-                      required
-                    />
-                    <small
-                      class="error-worker-origin-text"
-                      style="color: red; margin-left: 1rem; margin-top: 0.3rem;"
-                    ></small>
-                    <label for="worker-destination" class="form-destination"
-                      >Destination:
-                      <small style="color: red;"
-                        ><strong>*</strong></small
-                      ></label
-                    >
-                    <input
-                      type="text"
-                      name="worker-destination"
-                      id="worker-destination"
-                      placeholder="Where do you want to go?"
-                      required
-                    />
-                    <small
-                      class="error-worker-destination-text"
-                      style="color: red; margin-left: 1rem; margin-top: 0.3rem;"
-                    ></small>
-                    <label for="worker-family">
-                      Number of Family Members:
-                      <small style="color: red;"><strong>*</strong></small>
-                    </label>
-                    <input
-                      type="text"
-                      name="worker-family"
-                      id="worker-family"
-                      placeholder="Enter the no. of family members"
-                      reduired
-                    />
-                    <small
-                      class="error-worker-family-text"
-                      style="color: red; margin-left: 1rem; margin-top: 0.3rem;"
-                    ></small>
-                  </form>
+                      <span><i class="fas fa-user-check"></i> Submit</span>
+                    </button>
+                  </div>
                 </div>
-                <!-- Modal Footer -->
-                <div class="modal-footer">
-                  <button
-                    type="submit"
-                    onclick="_sendWorkerDetailsToFirebase()"
-                  >
-                    <span><i class="fas fa-user-check"></i> Submit</span>
-                  </button>
+              </div>
+            </div>
+            <div class="download">
+              <button
+                class="pre-worker-registration-button"
+                onclick="toggleWorkerModal()"
+              >
+                <span
+                  ><i class="fas fa-user"></i> Pre-Register For Shramik</span
+                >
+              </button>
+              <!-- Modal for registration -->
+              <div class="modal pre-worker-registration-modal">
+                <div class="modal-content">
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <span class="close-worker-modal">&times;</span>
+                    <h2>Pre-Register Form</h2>
+                    <p style="margin-top: 1rem; color: red;">
+                      <small><strong>* Required</strong></small>
+                    </p>
+                  </div>
+                  <!-- Modal Body -->
+                  <div class="modal-body">
+                    <pre class="object"></pre>
+                    <form action="#" id="worker-form">
+                      <label for="worker-name" class="form-name"
+                        >Name:
+                        <small style="color: red;"
+                          ><strong>*</strong></small
+                        ></label
+                      >
+                      <input
+                        type="text"
+                        name="worker-name"
+                        id="worker-name"
+                        placeholder="Enter your Name"
+                        required
+                      />
+                      <small
+                        class="error-worker-name-text"
+                        style="
+                          color: red;
+                          margin-left: 1rem;
+                          margin-top: 0.3rem;
+                        "
+                      ></small>
+                      <label for="worker-email" class="form-email" class="ikjot"
+                        >Email Address:
+                        <small style="font-size: 14px;">(Optional)</small>
+                      </label>
+                      <input
+                        type="email"
+                        name="worker-email"
+                        id="worker-email"
+                        placeholder="Enter your Email"
+                      />
+                      <small
+                        class="error-worker-email-text"
+                        style="
+                          color: red;
+                          margin-left: 1rem;
+                          margin-top: 0.3rem;
+                        "
+                      ></small>
+                      <label for="worker-contact" class="form-contact"
+                        >Contact Number:
+                        <small style="color: red;"><strong>*</strong></small>
+                      </label>
+                      <input
+                        type="text"
+                        name="worker-contact"
+                        id="worker-contact"
+                        placeholder="Enter you Phone Number"
+                      />
+                      <small
+                        class="error-worker-contact-text"
+                        style="
+                          color: red;
+                          margin-left: 1rem;
+                          margin-top: 0.3rem;
+                        "
+                      ></small>
+                      <label for="worker-origin" class="form-origin">
+                        Origin:
+                      </label>
+                      <input
+                        type="text"
+                        name="worker-origin"
+                        id="worker-origin"
+                        placeholder="Enter the location where you live"
+                        required
+                      />
+                      <label for="worker-destination" class="form-destination">
+                        Destination:
+                      </label>
+                      <input
+                        type="text"
+                        name="worker-destination"
+                        id="worker-destination"
+                        placeholder="Where do you want to go?"
+                        required
+                      />
+                      <label for="worker-family">
+                        Number of Family Members:
+                        <small style="color: red;"><strong>*</strong></small>
+                      </label>
+                      <input
+                        type="text"
+                        name="worker-family"
+                        id="worker-family"
+                        placeholder="Enter the no. of family members"
+                        reduired
+                      />
+                      <small
+                        class="error-worker-family-text"
+                        style="
+                          color: red;
+                          margin-left: 1rem;
+                          margin-top: 0.3rem;
+                        "
+                      ></small>
+                    </form>
+                  </div>
+                  <!-- Modal Footer -->
+                  <div class="modal-footer">
+                    <button
+                      type="submit"
+                      onclick="_sendWorkerDetailsToFirebase()"
+                      class="close-worker-modal-onsubmit"
+                    >
+                      <span><i class="fas fa-user-check"></i> Submit</span>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

@@ -1,3 +1,7 @@
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* Global settings */
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
 * {
   margin: 0;
   padding: 0;
@@ -21,31 +25,37 @@ body {
   background-size: cover;
   font-family: Comfortaa;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* Navbar */
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: #fff;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 2rem;
 }
 
 .nav-header {
   font-size: 24px;
-  margin: 2rem;
+  margin: 1rem;
   font-weight: 900;
 }
 
 .nav-header-image {
-  /* display: none; */
   vertical-align: middle;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  margin: 2rem;
+  margin: 1rem;
 }
 
 .nav-item {
@@ -63,6 +73,10 @@ nav {
   color: #3432e3;
 }
 
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* Main body content - Global styles for Home and About page */
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
 .page {
   display: flex;
   width: 90%;
@@ -77,7 +91,21 @@ nav {
   margin-top: 4rem;
 }
 
+.about-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 .main-content-header {
+  font-size: 44px;
+  margin-right: 1rem;
+  margin: 2rem 0rem;
+}
+
+.about-content-header {
   font-size: 44px;
   margin-right: 1rem;
   margin: 2rem 0rem;
@@ -85,6 +113,12 @@ nav {
 
 .main-content-lead {
   font-size: 24px;
+  margin: 1rem;
+  font-weight: 700;
+}
+
+.about-content-lead {
+  font-size: 26px;
   margin: 1rem;
   font-weight: 700;
 }
@@ -112,10 +146,13 @@ nav {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
+/* ................................................................................................................. */
+/* Only Home page styles */
+/* ................................................................................................................. */
+
 .helped-info {
   margin: 1rem 0rem;
-  font-size: 24px;
-  display: none;
+  font-size: 18px;
 }
 
 .main-content-img {
@@ -127,54 +164,117 @@ nav {
   opacity: 0.6;
 }
 
-.about-help-india {
-  width: 80%;
-  margin: auto;
-  display: grid;
-  grid-gap: 0.5rem;
-  grid-template-columns: auto auto auto auto auto auto;
-  grid-template-rows: auto auto auto auto;
-  color: #1c077a;
-  overflow-x: hidden !important;
+/* ................................................................................................................. */
+/* Only About page Styles */
+/* ................................................................................................................. */
+
+.about-flip-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.section-1 {
-  grid-column: 1/4;
-  border: 1px sold black;
-}
-
-.section-2 {
-  grid-row: 2/3;
-  grid-column: 2/6;
-}
-
-.section-3 {
-  grid-row: 3/4;
-  grid-column: 1/4;
-}
-
-.section-4 {
-  grid-row: 4/4;
-  grid-column: 1/6;
+.flip-box {
+  background-color: transparent;
+  width: 60vw;
+  height: 60vh;
   margin-bottom: 3rem;
+  border: 1px solid #f1f1f1;
+  border-radius: 10px;
+  perspective: 2000px;
 }
 
-.section-4 li {
-  margin-left: 3rem;
-  margin-top: 1rem;
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
 }
 
-.about-content-lead {
-  font-size: 20px;
-  margin: 1rem;
-  font-weight: 700;
-  padding: 2rem;
-  border: 2px solid #adadad;
-  border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 3rem;
-  border-top-left-radius: 3rem;
-  border-top-right-radius: 1rem;
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
 }
+
+.flip-box-front,
+.flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-box-front {
+  background-color: #1c077a;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.flip-box-back {
+  background-color: #fff;
+  border-radius: 10px;
+  color: #1c077a;
+  transform: rotateY(180deg);
+}
+
+.flip-box-top {
+  background-color: transparent;
+  width: 60vw;
+  height: 55vh;
+  border: 1px solid #f1f1f1;
+  border-radius: 10px;
+  perspective: 2000px;
+}
+
+.flip-box-top-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+.flip-box-top:hover .flip-box-top-inner {
+  transform: rotateX(180deg);
+}
+
+.flip-box-top-front,
+.flip-box-top-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-box-top-front {
+  background-color: #fff;
+  border-radius: 10px;
+  color: #1c077a;
+}
+
+.flip-box-top-back {
+  background-color: #1c077a;
+  border-radius: 10px;
+  color: #fff;
+  transform: rotateX(180deg);
+}
+
+.about-content-lead li {
+  margin: 1rem 0rem 1rem 2rem;
+}
+
+.about-content-lead p {
+  margin-bottom: 1rem;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* Modal styles */
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 .modal {
   display: none;
@@ -272,7 +372,11 @@ nav {
   cursor: pointer;
 }
 
-@media (max-width: 950px) {
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* Media queries for The document */
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+@media (max-width: 1024px) {
   .page {
     flex-direction: column;
   }
@@ -287,20 +391,58 @@ nav {
     transform: scale(0.8);
     width: 80%;
   }
+  .about-content-lead {
+    font-size: 26px;
+    margin: 0.5rem;
+  }
+  .flip-box {
+    width: 85vw;
+    height: 30vh;
+  }
+  .flip-box-top {
+    width: 85vw;
+    height: 27vh;
+  }
 }
 
 @media (max-width: 768px) {
   .nav-header-image {
     display: none;
   }
+  .main-content-header {
+    text-align: center;
+  }
+  .about-content-header {
+    text-align: center;
+  }
+  .main-content-lead {
+    text-align: center;
+  }
+  .about-content-lead {
+    font-size: 20px;
+    margin: 0.3rem;
+  }
+  .flip-box {
+    width: 85vw;
+    height: 30vh;
+  }
+  .flip-box-top {
+    width: 85vw;
+    height: 27vh;
+  }
 }
 
 @media (max-width: 468px) {
   nav {
+    transform: scale(0.79);
     flex-direction: column;
+  }
+  .nav-header {
+    font-size: 36px;
   }
   .nav-body {
     transform: scale(0.8);
+    margin: 0rem 0.5rem;
   }
   .nav-header-image {
     display: inline;
@@ -310,38 +452,56 @@ nav {
     align-items: center;
     margin-bottom: 2rem;
   }
+  .main-content {
+    margin-top: 2rem;
+  }
   .main-content-header {
+    margin: 0rem 1rem 1rem 1rem;
     text-align: center;
-    font-size: 32px;
+    font-size: 28px;
+  }
+  .about-content-header {
+    margin: 0rem 1rem 1rem 1rem;
+    text-align: center;
+    font-size: 28px;
   }
   .main-content-lead {
+    margin: 0rem 1rem;
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
   }
   .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .download {
+    display: flex;
     justify-content: center;
     align-items: center;
   }
   .download button {
     display: flex;
     flex-wrap: nowrap;
-    margin-right: 2rem;
-    padding: 1rem 3rem;
+    margin-right: 0rem;
     margin-bottom: 2rem;
-    transform: scale(0.7);
+    font-size: 17px;
   }
   .download button:hover {
-    transform: scale(0.75);
-  }
-  .helped-info {
-    font-size: 18px;
-    margin-top: -1rem;
-    display: none;
+    transform: scale(1.05);
   }
   .main-content-img img {
     display: none;
   }
   .modal-content {
+    width: 100%;
+    margin: auto;
+  }
+  .modal-header,
+  .modal-body,
+  .modal-footer {
+    padding: 0.5rem 1rem;
     width: 100%;
   }
   .modal-footer {
@@ -349,22 +509,51 @@ nav {
     justify-content: center;
   }
   .modal-footer button {
+    justify-self: center;
     text-align: center;
     margin-bottom: 1rem;
-  }
-  .section-1,
-  .section-3 {
-    display: none;
-  }
-  .section-2,
-  .section-4 {
-    grid-column: 1/6;
-  }
-  .section-4 .details .download button {
-    margin: auto;
+    margin-left: 0rem;
   }
   .about-content-lead {
-    font-size: 16px;
-    padding: 2rem 1rem;
+    font-size: 12px;
+    margin: 0.3rem;
+  }
+  .flip-box {
+    width: 85vw;
+    height: 33vh;
+  }
+  .flip-box-top {
+    width: 85vw;
+    height: 32vh;
+  }
+}
+
+@media (max-width: 375px) {
+  .about-content-lead {
+    font-size: 12px;
+    margin: 0.3rem;
+  }
+  .flip-box {
+    width: 85vw;
+    height: 40vh;
+  }
+  .flip-box-top {
+    width: 85vw;
+    height: 38vh;
+  }
+}
+
+@media (max-width: 320px) {
+  .about-content-lead {
+    font-size: 12px;
+    margin: 0.3rem;
+  }
+  .flip-box {
+    width: 85vw;
+    height: 48vh;
+  }
+  .flip-box-top {
+    width: 85vw;
+    height: 47vh;
   }
 }

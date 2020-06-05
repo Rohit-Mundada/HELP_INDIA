@@ -92,6 +92,14 @@ function _sendHelperDetailsToFirebase() {
 
   let database = firebase.database();
   let curr_count;
+
+  let modal = document.querySelector(".pre-helper-registration-modal");
+
+  let close = document.querySelector(".close-helper-modal-onsubmit");
+
+  close.onclick = () => {
+    modal.style.display = "none";
+  };
 }
 
 toggleWorkerModal = () => {
@@ -133,12 +141,7 @@ function _sendWorkerDetailsToFirebase() {
 
   let contactFormat = /^\d{10}$/;
 
-  let errorName,
-    errorEmail,
-    errorContact,
-    errorOrigin,
-    errorDestination,
-    errorWorkerFamilyMembers;
+  let errorName, errorEmail, errorContact, errorWorkerFamilyMembers;
 
   if (
     (name !== "" &&
@@ -148,7 +151,7 @@ function _sendWorkerDetailsToFirebase() {
       workerFamilyMembers !== "") ||
     email.match(mailFormat) !== null
   ) {
-    firebase.database().ref().child("users").push({
+    firebase.database().ref().child("migrants").push({
       name: name,
       email: email,
       contact: contact,
@@ -195,38 +198,16 @@ function _sendWorkerDetailsToFirebase() {
         ".error-worker-contact-text"
       ).innerHTML = errorContact;
     }
-    if (origin === "") {
-      errorOrigin = "This is a required field";
-      document.querySelector(
-        ".error-worker-origin-text"
-      ).innerHTML = errorOrigin;
-    } else {
-      errorOrigin = "";
-      document.querySelector(
-        ".error-worker-origin-text"
-      ).innerHTML = errorOrigin;
-    }
-    if (destination === "") {
-      errorDestination = "This is a required field";
-      document.querySelector(
-        ".error-worker-destination-text"
-      ).innerHTML = errorDestination;
-    } else {
-      errorDestination = "";
-      document.querySelector(
-        ".error-worker-destination-text"
-      ).innerHTML = errorOrigin;
-    }
     if (workerFamilyMembers === "") {
       errorWorkerFamilyMembers = "This is a required field";
       document.querySelector(
         ".error-worker-family-text"
-      ).innerHTML = errorDestination;
+      ).innerHTML = errorWorkerFamilyMembers;
     } else {
       errorWorkerFamilyMembers = "";
       document.querySelector(
         ".error-worker-family-text"
-      ).innerHTML = errorOrigin;
+      ).innerHTML = errorWorkerFamilyMembers;
     }
   }
 
@@ -234,4 +215,12 @@ function _sendWorkerDetailsToFirebase() {
 
   let database = firebase.database();
   let curr_count;
+
+  let modal = document.querySelector(".pre-worker-registration-modal");
+
+  let close = document.querySelector(".close-worker-modal-onsubmit");
+
+  close.onclick = () => {
+    modal.style.display = "none";
+  };
 }
