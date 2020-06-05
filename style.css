@@ -397,11 +397,14 @@ nav {
   color: #1c077a;
 }
 
-.contacts > p {
+.people {
+  display: flex;
   font-size: 18px;
   color: rgb(56, 56, 56);
   font-weight: 600;
-  padding: 0.4rem;
+}
+.people > p {
+  margin-right: 3rem;
 }
 
 .social-medias {
@@ -707,6 +710,7 @@ nav {
   }
   .about-us > p {
     font-size: 14px;
+    text-align: justify;
   }
   .social-medias > h2 {
     font-size: 24px;
@@ -715,18 +719,28 @@ nav {
   .social-medias > ul {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .social-medias > ul > li > a {
     font-size: 16px;
     padding: 0.3rem;
+    margin: 0rem;
   }
   .contacts > h2 {
     font-size: 24px;
     text-align: center;
   }
-  .contacts > p {
-    font-size: 14px;
+  .people {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .people > p {
+    font-size: 16px;
     text-align: center;
+    margin: 0rem 0rem 1rem 0rem;
   }
 }
 
