@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-storage.js"></script>
+    <script
+      src="https://kit.fontawesome.com/74c1adc36b.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>Help India - Contact</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/img/help-india.png"
+      type="image/png"
+    />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="nav-header">
+          <a href="index.html" style="text-decoration: none; color: #fff;"
+            ><img
+              src="./assets/img/help-india.png"
+              alt="help-india"
+              class="nav-header-image"
+              width="50px"
+              height="50px"
+            />
+            Help India</a
+          >
+        </div>
+        <div class="nav-body">
+          <ul class="nav-links">
+            <li class="nav-item">
+              <a href="index.html"> Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="active">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="feedback">
+        <div class="feedback-header">
+          <h1>Give us your Feedback</h1>
+        </div>
+        <div class="feedback-form">
+          <form action="#">
+            <label for="feedback-name" class="feedback-label">
+              Name:
+            </label>
+            <input
+              type="text"
+              name="feedback-name"
+              id="feedback-name"
+              placeholder="Enter your Name"
+              class="feedback-input"
+            />
+            <label for="feedback-email" class="feedback-label">
+              Email ID:
+            </label>
+            <input
+              type="email"
+              name="feedback-email"
+              id="feedback-email"
+              placeholder="Enter your Email Address"
+              class="feedback-input"
+            />
+            <label for="feedback-initiative" class="feedback-label">
+              What do you think of our initiative?
+            </label>
+            <select
+              name="feedback-initiative"
+              id="feedback-initiative"
+              class="feedback-input"
+            >
+              <option value="None">None</option>
+              <option value="Okay">Okay</option>
+              <option value="Good">Good</option>
+              <option value="Very-Good!">Very Good!</option>
+              <option value="Excellent!">Excellent!</option>
+            </select>
+            <p class="feedback-label">
+              What do you think about this Website?
+            </p>
+            <p class="feedback-website-clue">
+              <small
+                >(Rate on a scale from 1 to 5, with 5 being the most)</small
+              >
+            </p>
+            <div class="feedback-website-radio">
+              <div class="feedback-input-radio">
+                <input type="radio" name="radio" id="one" value="one" />
+                <label for="one">1</label>
+              </div>
+              <div class="feedback-input-radio">
+                <input type="radio" name="radio" id="two" value="two" />
+                <label for="two">2</label>
+              </div>
+              <div class="feedback-input-radio">
+                <input type="radio" name="radio" id="three" value="three" />
+                <label for="three">3</label>
+              </div>
+              <div class="feedback-input-radio">
+                <input type="radio" name="radio" id="four" value="four" />
+                <label for="four">4</label>
+              </div>
+              <div class="feedback-input-radio">
+                <input type="radio" name="radio" id="five" value="five" />
+                <label for="five">5</label>
+              </div>
+            </div>
+
+            <label for="feedback-suggestions" class="feedback-label">
+              Any Other Suggestions:
+            </label>
+            <textarea
+              name="feedback-suggestion"
+              id="feedback-suggestion"
+              cols="30"
+              rows="10"
+              class="feedback-input-suggestion"
+              placeholder="Write down your thoughts"
+            ></textarea>
+            <input
+              type="submit"
+              value="Submit Feedback"
+              class="feedback-form-submit"
+            />
+          </form>
+        </div>
+      </div>
+      <div class="contact">
+        <div class="about-us">
+          <h2>Who we are and What we Do:</h2>
+          <p>
+            We are a group of students from BITS pilani, goa campus and NIT
+            surathkal who have had enough of depending upon others to help our
+            nation. We aim to create a transparent NON PROFIT platform to
+            connect the shramiks with helpers, without any outside intervention.
+            We will give you the ability to help them on a personal level
+            without donating us or them any money, you will just make necessary
+            arrangements for them to reach home or any other help they need. WE
+            ARE A GROUP OF STUDENTS WHO HAVE HAD ENOUGH of listening “ yaar
+            these people can only post about stuff in instagram”. We come
+            together to make the change rather than talk about it.
+          </p>
+        </div>
+        <div class="social-medias">
+          <h2>Check Out Our Social Media Pages:</h2>
+          <ul>
+            <li>
+              <a
+                href="https://www.instagram.com/help_india_grow/"
+                target="_blank"
+                ><i class="fab fa-instagram fa-3x"></i> &nbsp;
+                <span>@help_india_grow</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com/Help_India_Grow-116020563468656"
+                target="_blank"
+              >
+                <i class="fab fa-facebook fa-3x"></i> &nbsp;
+                <span>Help_India_Grow</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="contacts">
+          <h2>Contact Us On:</h2>
+          <p>Harsh Shandilya: +91 84312 63004</p>
+          <p>Rohit Mundada: +91 79727 08733</p>
+          <p>Ikjot Singh: +91 98859 20911</p>
+        </div>
+      </div>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
