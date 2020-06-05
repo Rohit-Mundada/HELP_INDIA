@@ -351,11 +351,14 @@ nav {
   }
   .flip-box {
     width: 85vw;
-    height: 45vh;
+    height: 50vh;
   }
   .flip-box-top {
     width: 85vw;
-    height: 45vh;
+    height: 50vh;
+  }
+  .download button {
+    margin: 2rem 1rem;
   }
 }
 @media (max-width: 768px) {
@@ -383,8 +386,14 @@ nav {
     width: 85vw;
     height: 55vh;
   }
+  .download button {
+    margin: 2rem 1rem;
+  }
 }
 @media (max-width: 568px) {
+  nav {
+    transform: scale(0.8);
+  }
   .about-content-lead {
     font-size: 12px;
     margin: 0.3rem;
@@ -396,6 +405,9 @@ nav {
   .flip-box-top {
     width: 85vw;
     height: 65vh;
+  }
+  .download button {
+    margin: 2rem 1rem;
   }
 }
 @media (max-width: 468px) {
