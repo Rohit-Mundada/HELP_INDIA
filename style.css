@@ -386,27 +386,6 @@ nav {
   font-weight: 600;
 }
 
-.contacts {
-  margin-bottom: 3rem;
-}
-
-.contacts > h2 {
-  font-size: 28px;
-  font-weight: 900;
-  margin-bottom: 1rem;
-  color: #1c077a;
-}
-
-.people {
-  display: flex;
-  font-size: 18px;
-  color: rgb(56, 56, 56);
-  font-weight: 600;
-}
-.people > p {
-  margin-right: 3rem;
-}
-
 .social-medias {
   margin-bottom: 3rem;
 }
@@ -433,6 +412,30 @@ nav {
 }
 
 .social-medias > ul > li > a:hover {
+  color: #1c077a;
+}
+
+.contacts {
+  margin-bottom: 3rem;
+}
+
+.contacts > h2 {
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  color: #1c077a;
+}
+
+.contacts > p > a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: rgb(37, 37, 37);
+  font-size: 20px;
+  margin-right: 2rem;
+}
+
+.contacts > p > a:hover {
   color: #1c077a;
 }
 
@@ -731,16 +734,10 @@ nav {
     font-size: 24px;
     text-align: center;
   }
-  .people {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .people > p {
-    font-size: 16px;
-    text-align: center;
-    margin: 0rem 0rem 1rem 0rem;
+  .contacts > p > a {
+    font-size: 14px;
+    padding: 0.3rem;
+    margin: 0rem;
   }
 }
 
