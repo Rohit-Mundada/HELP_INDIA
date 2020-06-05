@@ -220,3 +220,34 @@ function _sendWorkerDetailsToFirebase() {
     modal.style.display = "none";
   };
 }
+var customer_satisfaction_global = 0;
+function selected(customer_satisfaction) {
+  customer_satisfaction_global = customer_satisfaction;
+  console.log(customer_satisfaction);
+}
+function _contactUs() {
+
+  let name = document.querySelector("#feedback-name").value;
+
+  let email = document.querySelector("#feedback-email").value;
+
+  let feedback_initiative = document.querySelector("#feedback-initiative")
+    .value;
+
+  let satisfaction = customer_satisfaction_global;
+
+  let suggestions = document.querySelector("#feedback-suggestion").value;
+  console.log(name);
+  console.log(email);
+  console.log(feedback_initiative);
+  console.log(satisfaction);
+  console.log(suggestions);
+  firebase.database().ref().child("contact_us").push({
+    name: name,
+    email: email,
+    feedback_initiative: feedback_initiative,
+    satosfaction: satisfaction,
+    suggestions: suggestions,
+  });
+  
+}
