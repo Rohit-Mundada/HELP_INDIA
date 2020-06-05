@@ -51,6 +51,12 @@ nav {
 .nav-item a:hover {
   color: #1c077a;
 }
+.nav-item a.active {
+  color: #1c077a;
+}
+.nav-item a.active:hover {
+  color: #fff;
+}
 .page {
   display: flex;
   width: 90%;
@@ -116,10 +122,6 @@ nav {
   width: 80%;
   margin: auto;
 }
-.helped-info {
-  margin: 1rem 0;
-  font-size: 18px;
-}
 .main-content-img {
   margin-top: 4rem;
 }
@@ -127,11 +129,108 @@ nav {
   width: 80%;
   opacity: 0.6;
 }
+.about-flip-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.flip-box {
+  background-color: transparent;
+  width: 60vw;
+  height: 60vh;
+  margin-bottom: 3rem;
+  border: 1px solid #f1f1f1;
+  border-radius: 10px;
+  perspective: 2000px;
+}
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+.flip-box-back,
+.flip-box-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.flip-box-front {
+  background-color: #1c077a;
+  border-radius: 10px;
+  color: #fff;
+}
+.flip-box-back {
+  background-color: #fff;
+  border-radius: 10px;
+  color: #1c077a;
+  transform: rotateY(180deg);
+}
+.flip-box-top {
+  background-color: transparent;
+  width: 60vw;
+  height: 55vh;
+  border: 1px solid #f1f1f1;
+  border-radius: 10px;
+  perspective: 2000px;
+}
+.flip-box-top-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+.flip-box-top:hover .flip-box-top-inner {
+  transform: rotateX(180deg);
+}
+.flip-box-top-back,
+.flip-box-top-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.flip-box-top-front {
+  background-color: #fff;
+  border-radius: 10px;
+  color: #1c077a;
+}
+.flip-box-top-back {
+  background-color: #1c077a;
+  border-radius: 10px;
+  color: #fff;
+  transform: rotateX(180deg);
+}
 .about-content-lead li {
   margin: 1rem 0 1rem 2rem;
 }
 .about-content-lead p {
   margin-bottom: 1rem;
+}
+.about-us {
+  margin: 3rem 0;
+}
+.about-us > h2 {
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  color: #1c077a;
+}
+.about-us > p {
+  font-size: 18px;
+  color: #383838;
+  font-weight: 600;
 }
 .modal {
   display: none;
@@ -236,11 +335,27 @@ nav {
     font-size: 22px;
     margin: 0.5rem;
   }
+  .flip-box {
+    width: 85vw;
+    height: 38vh;
+  }
+  .flip-box-top {
+    width: 85vw;
+    height: 38vh;
+  }
 }
 @media (max-width: 823px) {
   .about-content-lead {
     font-size: 14px;
     margin: 0.3rem;
+  }
+  .flip-box {
+    width: 85vw;
+    height: 45vh;
+  }
+  .flip-box-top {
+    width: 85vw;
+    height: 45vh;
   }
 }
 @media (max-width: 768px) {
@@ -260,11 +375,27 @@ nav {
     font-size: 12px;
     margin: 0.3rem;
   }
+  .flip-box {
+    width: 85vw;
+    height: 55vh;
+  }
+  .flip-box-top {
+    width: 85vw;
+    height: 55vh;
+  }
 }
 @media (max-width: 568px) {
   .about-content-lead {
     font-size: 12px;
     margin: 0.3rem;
+  }
+  .flip-box {
+    width: 85vw;
+    height: 67vh;
+  }
+  .flip-box-top {
+    width: 85vw;
+    height: 65vh;
   }
 }
 @media (max-width: 468px) {
@@ -353,16 +484,48 @@ nav {
     font-size: 12px;
     margin: 0.3rem;
   }
+  .flip-box {
+    width: 80vw;
+    height: 33vh;
+  }
+  .flip-box-top {
+    width: 80vw;
+    height: 32vh;
+  }
+  .about-us > h2 {
+    font-size: 24px;
+    text-align: center;
+  }
+  .about-us > p {
+    font-size: 14px;
+    text-align: justify;
+  }
 }
 @media (max-width: 375px) {
   .about-content-lead {
     font-size: 12px;
     margin: 0.3rem;
   }
+  .flip-box {
+    width: 85vw;
+    height: 40vh;
+  }
+  .flip-box-top {
+    width: 85vw;
+    height: 38vh;
+  }
 }
 @media (max-width: 320px) {
   .about-content-lead {
     font-size: 12px;
     margin: 0.3rem;
+  }
+  .flip-box {
+    width: 85vw;
+    height: 48vh;
+  }
+  .flip-box-top {
+    width: 85vw;
+    height: 47vh;
   }
 }

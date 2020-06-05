@@ -21,9 +21,7 @@ toggleHelperModal = () => {
 
   let close = document.getElementsByClassName("close-helper-modal")[0];
 
-  button.onclick = () => {
-    modal.style.display = "block";
-  };
+  modal.style.display = "block";
 
   close.onclick = () => {
     modal.style.display = "none";
@@ -109,9 +107,7 @@ toggleWorkerModal = () => {
 
   let close = document.getElementsByClassName("close-worker-modal")[0];
 
-  button.onclick = () => {
-    modal.style.display = "block";
-  };
+  modal.style.display = "block";
 
   close.onclick = () => {
     modal.style.display = "none";
