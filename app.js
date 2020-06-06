@@ -95,9 +95,7 @@ function _sendHelperDetailsToFirebase() {
 
   let close = document.querySelector(".close-helper-modal-onsubmit");
 
-  close.onclick = () => {
-    modal.style.display = "none";
-  };
+  modal.style.display = "none";
 }
 
 toggleWorkerModal = () => {
@@ -216,9 +214,7 @@ function _sendWorkerDetailsToFirebase() {
 
   let close = document.querySelector(".close-worker-modal-onsubmit");
 
-  close.onclick = () => {
-    modal.style.display = "none";
-  };
+  modal.style.display = "none";
 }
 var customer_satisfaction_global = 0;
 function selected(customer_satisfaction) {
