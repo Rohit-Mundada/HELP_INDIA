@@ -118,23 +118,23 @@
             </p>
             <div class="feedback-website-radio">
               <div class="feedback-input-radio">
-                <input type="radio" name="radio" id="one" value="one" />
+                <input type="radio" name="radio" id="one" value="one" onclick="selected(1)"/>
                 <label for="one">1</label>
               </div>
               <div class="feedback-input-radio">
-                <input type="radio" name="radio" id="two" value="two" />
+                <input type="radio" name="radio" id="two" value="two" onclick="selected(2)"/>
                 <label for="two">2</label>
               </div>
               <div class="feedback-input-radio">
-                <input type="radio" name="radio" id="three" value="three" />
+                <input type="radio" name="radio" id="three" value="three" onclick="selected(3)"/>
                 <label for="three">3</label>
               </div>
               <div class="feedback-input-radio">
-                <input type="radio" name="radio" id="four" value="four" />
+                <input type="radio" name="radio" id="four" value="four" onclick="selected(4)"/>
                 <label for="four">4</label>
               </div>
               <div class="feedback-input-radio">
-                <input type="radio" name="radio" id="five" value="five" />
+                <input type="radio" name="radio" id="five" value="five" onclick="selected(5)"/>
                 <label for="five">5</label>
               </div>
             </div>
@@ -154,6 +154,7 @@
               type="submit"
               value="Submit Feedback"
               class="feedback-form-submit"
+              onclick="_contactUs()"
             />
           </form>
         </div>
