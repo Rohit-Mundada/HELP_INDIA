@@ -73,9 +73,13 @@
           <h1>Give us your Feedback</h1>
         </div>
         <div class="feedback-form">
+          <p style="margin-top: 1rem; color: red;">
+            <small><strong>* Required</strong></small>
+          </p>
           <form action="#">
             <label for="feedback-name" class="feedback-label">
               Name:
+              <small style="color: red;"><strong>*</strong></small>
             </label>
             <input
               type="text"
@@ -84,8 +88,13 @@
               placeholder="Enter your Name"
               class="feedback-input"
             />
+            <small
+              class="error-name-text"
+              style="color: red; margin-left: 1rem; margin-top: 0.3rem;"
+            ></small>
             <label for="feedback-email" class="feedback-label">
               Email ID:
+              <small style="color: red;"><strong>*</strong></small>
             </label>
             <input
               type="email"
@@ -94,22 +103,33 @@
               placeholder="Enter your Email Address"
               class="feedback-input"
             />
+            <small
+              class="error-email-text"
+              style="color: red; margin-left: 1rem; margin-top: 0.3rem;"
+            ></small>
             <label for="feedback-initiative" class="feedback-label">
               What do you think of our initiative?
+              <small style="color: red;"><strong>*</strong></small>
             </label>
             <select
               name="feedback-initiative"
               id="feedback-initiative"
-              class="feedback-input"
+              class="feedback-input form-control"
+              required
             >
-              <option value="None">None</option>
+              <option value="" disabled="disabled">Category</option>
               <option value="Okay">Okay</option>
               <option value="Good">Good</option>
               <option value="Very-Good!">Very Good!</option>
               <option value="Excellent!">Excellent!</option>
             </select>
+            <small
+              class="error-initiative-text"
+              style="color: red; margin-left: 1rem; margin-top: 0.3rem;"
+            ></small>
             <p class="feedback-label">
               What do you think about this Website?
+              <small style="color: red;"><strong>*</strong></small>
             </p>
             <p class="feedback-website-clue">
               <small
@@ -118,27 +138,65 @@
             </p>
             <div class="feedback-website-radio">
               <div class="feedback-input-radio">
-                <input type="radio" name="radio" id="one" value="one" onclick="selected(1)"/>
+                <input
+                  type="radio"
+                  name="radio"
+                  id="one"
+                  value="one"
+                  onclick="selected(1)"
+                  required
+                />
                 <label for="one">1</label>
               </div>
               <div class="feedback-input-radio">
-                <input type="radio" name="radio" id="two" value="two" onclick="selected(2)"/>
+                <input
+                  type="radio"
+                  name="radio"
+                  id="two"
+                  value="two"
+                  onclick="selected(2)"
+                  required
+                />
                 <label for="two">2</label>
               </div>
               <div class="feedback-input-radio">
-                <input type="radio" name="radio" id="three" value="three" onclick="selected(3)"/>
+                <input
+                  type="radio"
+                  name="radio"
+                  id="three"
+                  value="three"
+                  onclick="selected(3)"
+                  required
+                />
                 <label for="three">3</label>
               </div>
               <div class="feedback-input-radio">
-                <input type="radio" name="radio" id="four" value="four" onclick="selected(4)"/>
+                <input
+                  type="radio"
+                  name="radio"
+                  id="four"
+                  value="four"
+                  onclick="selected(4)"
+                  required
+                />
                 <label for="four">4</label>
               </div>
               <div class="feedback-input-radio">
-                <input type="radio" name="radio" id="five" value="five" onclick="selected(5)"/>
+                <input
+                  type="radio"
+                  name="radio"
+                  id="five"
+                  value="five"
+                  onclick="selected(5)"
+                  required
+                />
                 <label for="five">5</label>
               </div>
             </div>
-
+            <small
+              class="error-satisfaction-text"
+              style="color: red; margin-left: 1rem; margin-top: 0.3rem;"
+            ></small>
             <label for="feedback-suggestions" class="feedback-label">
               Any Other Suggestions:
             </label>

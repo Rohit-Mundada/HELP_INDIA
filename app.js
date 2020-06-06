@@ -56,11 +56,7 @@ function _sendHelperDetailsToFirebase() {
       name: name,
       contact: contact,
     });
-    console.log("Adding to firebase");
-    console.log("HI");
-    console.log(email);
-    console.log(name);
-    console.log(contact);
+
     alert("All data was successfully registered!");
   } else {
     if (name === "") {
@@ -140,8 +136,6 @@ function _sendWorkerDetailsToFirebase() {
   if (
     (name !== "" &&
       contact.match(contactFormat) !== null &&
-      origin !== "" &&
-      destination !== "" &&
       workerFamilyMembers !== "") ||
     email.match(mailFormat) !== null
   ) {
@@ -153,12 +147,6 @@ function _sendWorkerDetailsToFirebase() {
       destination: destination,
       workerFamilyMembers: workerFamilyMembers,
     });
-    console.log(name);
-    console.log(email);
-    console.log(contact);
-    console.log(origin);
-    console.log(destination);
-    console.log(workerFamilyMembers);
 
     alert("All data was successfully registered!");
   } else {
@@ -219,10 +207,8 @@ function _sendWorkerDetailsToFirebase() {
 var customer_satisfaction_global = 0;
 function selected(customer_satisfaction) {
   customer_satisfaction_global = customer_satisfaction;
-  console.log(customer_satisfaction);
 }
 function _contactUs() {
-
   let name = document.querySelector("#feedback-name").value;
 
   let email = document.querySelector("#feedback-email").value;
@@ -232,18 +218,64 @@ function _contactUs() {
 
   let satisfaction = customer_satisfaction_global;
 
+  let mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+  let errorName, errorEmail, errorFeedbackInitiative, errorSatisfaction;
+
   let suggestions = document.querySelector("#feedback-suggestion").value;
-  console.log(name);
-  console.log(email);
-  console.log(feedback_initiative);
-  console.log(satisfaction);
-  console.log(suggestions);
-  firebase.database().ref().child("contact_us").push({
-    name: name,
-    email: email,
-    feedback_initiative: feedback_initiative,
-    satosfaction: satisfaction,
-    suggestions: suggestions,
-  });
-  
+
+  if (
+    (name !== null &&
+      email.match(mailFormat) !== null &&
+      feedback_initiative !== "" &&
+      Number.isInteger(satisfaction)) ||
+    suggestions !== ""
+  ) {
+    firebase.database().ref().child("contact_us").push({
+      name: name,
+      email: email,
+      feedback_initiative: feedback_initiative,
+      satosfaction: satisfaction,
+      suggestions: suggestions,
+    });
+
+    alert("Your feedback was sent successfully!");
+  } else {
+    if (name === "") {
+      errorName = "This is a required field";
+      document.querySelector(".error-name-text").innerHTML = errorName;
+    } else {
+      errorName = "";
+      document.querySelector(".error-name-text").innerHTML = errorName;
+    }
+    if (email.match(mailFormat) === null) {
+      errorEmail = "Not a valid Email Address";
+      document.querySelector(".error-email-text").innerHTML = errorEmail;
+    } else {
+      errorEmail = "";
+      document.querySelector(".error-worker-email-text").innerHTML = errorEmail;
+    }
+    if (feedback_initiative === "") {
+      errorFeedbackInitiative = "This is a required field";
+      document.querySelector(
+        ".error-initiative-text"
+      ).innerHTML = errorFeedbackInitiative;
+    } else {
+      errorFeedbackInitiative = "";
+      document.querySelector(
+        ".error-initiative-text"
+      ).innerHTML = errorFeedbackInitiative;
+    }
+    if (Number.isInteger(suggestions)) {
+      errorSatisfaction = "This is a required field";
+      document.querySelector(
+        ".error-satisfaction-text"
+      ).innerHTML = errorSatisfaction;
+    } else {
+      errorSatisfaction = "";
+      document.querySelector(
+        ".error-satisfaction-text"
+      ).innerHTML = errorSatisfaction;
+    }
+  }
 }
