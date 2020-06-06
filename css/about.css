@@ -92,7 +92,7 @@ nav {
   font-weight: 700;
 }
 .about-content-lead {
-  font-size: 26px;
+  font-size: 18px;
   margin: 1rem;
   font-weight: 700;
 }
@@ -137,8 +137,8 @@ nav {
 }
 .flip-box {
   background-color: transparent;
-  width: 60vw;
-  height: 60vh;
+  width: 70vw;
+  height: 45vh;
   margin-bottom: 3rem;
   border: 1px solid #f1f1f1;
   border-radius: 10px;
@@ -176,8 +176,8 @@ nav {
 }
 .flip-box-top {
   background-color: transparent;
-  width: 60vw;
-  height: 55vh;
+  width: 70vw;
+  height: 45vh;
   border: 1px solid #f1f1f1;
   border-radius: 10px;
   perspective: 2000px;
@@ -230,7 +230,7 @@ nav {
 .about-us > p {
   font-size: 18px;
   color: #383838;
-  font-weight: 600;
+  font-weight: 700;
 }
 .modal {
   display: none;
@@ -332,7 +332,7 @@ nav {
     width: 80%;
   }
   .about-content-lead {
-    font-size: 22px;
+    font-size: 16px;
     margin: 0.5rem;
   }
   .flip-box {
@@ -404,7 +404,7 @@ nav {
   }
   .flip-box-top {
     width: 85vw;
-    height: 65vh;
+    height: 67vh;
   }
   .download button {
     margin: 2rem 1rem;
@@ -498,11 +498,11 @@ nav {
   }
   .flip-box {
     width: 80vw;
-    height: 33vh;
+    height: 37vh;
   }
   .flip-box-top {
     width: 80vw;
-    height: 32vh;
+    height: 37vh;
   }
   .about-us > h2 {
     font-size: 24px;
@@ -524,7 +524,7 @@ nav {
   }
   .flip-box-top {
     width: 85vw;
-    height: 38vh;
+    height: 40vh;
   }
 }
 @media (max-width: 320px) {
@@ -534,10 +534,10 @@ nav {
   }
   .flip-box {
     width: 85vw;
-    height: 48vh;
+    height: 50vh;
   }
   .flip-box-top {
     width: 85vw;
-    height: 47vh;
+    height: 50vh;
   }
 }
